@@ -41,19 +41,7 @@ exports.setup = function (User, config) {
 	        serviceCatalog: identity.raw.access.serviceCatalog
 	    };*/
 	    
-	   /* var user1 = identity.user;
-	      var output = '';
-	      for (var property in user1) {
-	        output += property + ': ' + user1[property]+'; ';
-	      }
-	     // console.log('##USER PROP ...'+identity.user.name);
-	      
-	      User.findOne({'name':'cloudportal'}, function(err, user) {
-	          if (err) throw err
-	          console.log(user.name + " has the power ");
-	      });*/
-	      
-	      
+	     
 	      
 	      User.findOne({
 	          'name': identity.user.name
@@ -62,8 +50,8 @@ exports.setup = function (User, config) {
 	        	  console.log('##USER NOT FOUND');
 	        	    user = new User({
 	            	name: identity.user.name,
-	 	            username: identity.user.name,
-	 	            role: 'user',
+	 	            username: identity.user.username,
+	 	            role: identity.user.roles[0].name,
 	 	            provider: 'keystone'
 	            });
 	            user.save(function(err) {
