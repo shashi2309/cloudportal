@@ -3,6 +3,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var crypto = require('crypto');
+//ADDED KEYSTONE
 var authTypes = ['github', 'twitter', 'facebook', 'google','keystone'];
 
 var UserSchema = new Schema({

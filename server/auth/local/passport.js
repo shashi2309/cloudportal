@@ -19,7 +19,6 @@ exports.setup = function(User, config) {
 				'name' : identity.user.name
 			}, function(err, user) {
 				if (!user) {
-					console.log('##USER NOT FOUND');
 					user = new User({
 						name : identity.user.name,
 						username : identity.user.username,
